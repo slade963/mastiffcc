@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Slade Miller">
+    <meta name="description" content="Media page featuring WWE cards, custom video, GIF, and slideshow by Slade Miller.">
+    <title>Slade's WWE Media Page</title>
+
+```
+<style>
+    body {
+        font-family: Arial;
+        background-color: #111;
+        color: white;
+        text-align: center;
+    }
+
+    h1 {
+        background: black;
+        padding: 15px;
+    }
+
+    .section {
+        margin: 30px;
+        padding: 20px;
+        background: #1c1c1c;
+        border-radius: 10px;
+    }
+
+    img {
+        width: 300px;
+        border-radius: 10px;
+    }
+
+    video {
+        border-radius: 10px;
+    }
+
+    .slideshow-container {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .slides {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<h1>WWE Media Collection</h1>
+
+<!-- #1 AUDIO (you still need to add your own mp3) -->
+
+<div class="section">
+    <h2>#1 Audio File</h2>
+    <audio controls>
+        <source src="media/audio.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<!-- #2 VIDEO -->
+
+<div class="section">
+    <h2>#2 Video File</h2>
+    <video width="320" controls>
+        <source src="media/video.mov" type="video/mp4">
+    </video>
+</div>
+
+<!-- #3 GIF -->
+
+<div class="section">
+    <h2>#3 Animated GIF</h2>
+    <img src="media/wwe.gif" alt="WWE GIF">
+</div>
+
+<!-- #4 SLIDESHOW -->
+
+<div class="section">
+    <h2>#4 Slideshow</h2>
+
+```
+<div class="slideshow-container">
+    <img class="slides active" src="media/aj.jpg">
+    <img class="slides" src="media/tama.jpg">
+</div>
+```
+
+</div>
+
+<script>
+let slideIndex = 0;
+const slides = document.getElementsByClassName("slides");
+
+function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].classList.add("active");
+    setTimeout(showSlides, 2000);
+}
+
+showSlides();
+</script>
+
+</body>
+</html>
